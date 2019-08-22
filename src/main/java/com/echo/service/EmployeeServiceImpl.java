@@ -20,11 +20,21 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public List<Employee> findAll() {
         List<Employee> emps = employeeDao.findAll();
+
+        /* 用于验证事务是否配置成功，find 系列方法是 readOnly
+        save 是非 readOnly 的，会导致异常：
+            java.sql.SQLException: Connection is read-only.
+        employeeDao.saveEmployee(null);*/
         return emps;
     }
 
     @Override
     public void saveEmployee(Employee employee) {
+        employeeDao.saveEmployee(employee);
+    }
 
+    @Override
+    public void deleteById(Integer id) {
+        employeeDao.deleteById(id);
     }
 }

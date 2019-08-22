@@ -22,6 +22,7 @@
         <th>LastName</th>
         <th>Email</th>
         <th>Gender</th>
+        <c:if test="${delStatus eq 1}"><th>opt: Delete<th></c:if>
     </tr>
     <c:forEach items="${emps}" var="emp">
         <tr>
@@ -38,6 +39,11 @@
                     </c:when>
                 </c:choose>
             </td>
+                <c:if test="${delStatus eq 1}">
+            <td>
+                    <a href="${pageContext.request.contextPath}/employee/delete?id=${emp.id}">delete</a>
+            <td>
+                </c:if>
         </tr>
     </c:forEach>
     </tbody>

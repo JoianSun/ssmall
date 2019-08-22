@@ -11,6 +11,7 @@
     <title>Index of CRM</title>
 </head>
 <body>
-    <h2><a href="${pageContext.request.contextPath}/employee/findAll">show All Employees</a> </h2>
+<h2><a href="${pageContext.request.contextPath}/employee/findAll">show All Employees</a> </h2>
+<h2><a href="${pageContext.request.contextPath}/employee/add">Add one Employee</a> </h2>
 </body>
 </html>

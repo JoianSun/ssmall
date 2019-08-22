@@ -25,4 +25,12 @@ public interface EmployeeDao {
      * @param employee：待保存的 POJO 员工实例
      */
     void saveEmployee(Employee employee);
+
+
+    /**
+     * deleteById：删除指定 id 的员工信息
+     *
+     * @param id： 待删除的员工的 id
+     */
+    void deleteById(Integer id);
 }

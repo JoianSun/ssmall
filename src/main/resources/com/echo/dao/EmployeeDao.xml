@@ -11,4 +11,8 @@
       SELECT id, last_name AS lastName, email, gender
       FROM tbl_employee;
     </select>
+    <delete id="deleteById" parameterType="integer">
+        DELETE FROM tbl_employee
+        WHERE id = #{id};
+    </delete>
 </mapper>
