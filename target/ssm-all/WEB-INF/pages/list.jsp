@@ -39,7 +39,11 @@
                     </c:when>
                 </c:choose>
             </td>
-            <c:if test="${delStatus eq 1}"><td><a href="${pageContext.request.contextPath}/employee/delete?id=${emp.id}">delete</a> <td></c:if>
+                <c:if test="${delStatus eq 1}">
+            <td>
+                    <a href="${pageContext.request.contextPath}/employee/delete?id=${emp.id}">delete</a>
+            <td>
+                </c:if>
         </tr>
     </c:forEach>
     </tbody>

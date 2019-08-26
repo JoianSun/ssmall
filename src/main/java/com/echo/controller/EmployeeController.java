@@ -1,7 +1,7 @@
 package com.echo.controller;
 
-import com.echo.dao.EmployeeDao;
 import com.echo.domain.Employee;
+import com.echo.exception.SSMCustomException;
 import com.echo.service.EmployeeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,10 +25,13 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @RequestMapping("/findAll")
-    public String findAll(Map<String,Object> map) {
+    public String findAll(Map<String,Object> map) throws SSMCustomException {
         List<Employee> employees = employeeService.findAll();
         map.put("emps",employees);
         map.put("delStatus",1);
+        if(1==1){
+            throw new SSMCustomException("完蛋了；额...");
+        }
         return "list";
     }
 
